@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.inzh.talend</groupId>
+    <artifactId>inzh-talend-job-manager</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <licenses>
+        <license>
+            <name>Creative Commons Attribution 4.0 International Public License</name>
+            <url>https://creativecommons.org/licenses/by/4.0/legalcode.txt</url>
+        </license>
+    </licenses>
+    <organization>
+        <name>[InZH] Studio</name>
+        <url>https://www.inzh.fr</url>
+    </organization>
+    <inceptionYear>2011</inceptionYear>
+    <developers>
+        <developer>
+            <name>Jean-Raffi Nazareth</name>
+            <email>jr-nazareth@inzh.fr</email>
+            <organization>[InZH] Studio</organization>
+            <organizationUrl>https://www.inzh.fr</organizationUrl>
+            <roles>
+                <role>owner</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>fr.inzh.lang</groupId>
+            <artifactId>inzh-simple-process</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>2.11.2</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-source</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <stylesheetfile>src/main/javadoc/stylesheet.css</stylesheetfile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
